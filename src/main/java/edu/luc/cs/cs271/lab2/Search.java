@@ -40,12 +40,13 @@ public class Search {
    */
   public static Optional<Integer> findTeamMinFunding(final Team[] arr, final int minFunding) {
     boolean Done = false;
-    do {
-      for(int i = 0; i<arr.length; i++)
-        if(arr[i].getFunding()> minFunding)
-        {Done = true;
-      return Optional.of(i);}
-    } while(Done == false);
+
+      for(int i = 0; i<arr.length; i++) {
+        if (arr[i].getFunding() >= minFunding) {
+          return Optional.of(i);
+        }
+      }
+
 
     return Optional.empty();
   }
